@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
+
 const Hero = () => {
   return <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-28 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Background pattern */}
@@ -11,14 +13,14 @@ const Hero = () => {
           {/* Left content - text */}
           <div className="w-full lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
             <h1 className="heading-xl mb-6 leading-tight">
-              Explore China <span className="text-gradient">Like a Local</span>, Even on Your First Visit
+              Find Your Trusted <span className="text-gradient">Local</span> Guide in China
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0">
               Connect with English-speaking local guides who help you navigate language barriers, local apps, and discover authentic experiences throughout China.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <Button className="btn-primary">Join the Waitlist</Button>
-              <Button className="btn-outline">Learn More</Button>
+              <Button className="btn-outline">How It Works</Button>
             </div>
             
             {/* Trust indicators */}

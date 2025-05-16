@@ -39,9 +39,9 @@ const WaitlistCTA = () => {
             
             {/* Right side - content */}
             <div className="w-full md:w-1/2 p-8 md:p-12 bg-gradient-to-r from-coral to-coral/90 text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Be Among the First to Experience Stress-Free Travel in China</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Explore China with a Local you trust</h2>
               <p className="text-white/90 text-lg mb-8">
-                Join our exclusive waitlist and get early access to our platform when we launch.
+                Join our exclusive waitlist and be the first to connect with trusted local guides who'll make your China experience unforgettable.
               </p>
               
               <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3">
