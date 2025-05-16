@@ -1,28 +1,29 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Team = () => {
   const team = [
     {
       name: "Jennifer Wong",
       role: "Founder & CEO",
-      bio: "Former expat with 5+ years living in Beijing. Created Trusted Local after struggling with language barriers during her first years in China.",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=256&ixlib=rb-4.0.3"
+      initials: "JW"
     },
     {
       name: "Michael Chen",
       role: "Co-Founder & CPO",
-      bio: "Born in Guangzhou and educated in the US. Passionate about connecting travelers with authentic Chinese experiences beyond tourist attractions.",
-      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&q=80&w=256&ixlib=rb-4.0.3"
+      initials: "MC"
     },
     {
       name: "Sarah Johnson",
       role: "Head of Guide Relations",
-      bio: "Travel industry veteran with extensive experience in Asia. Ensures all guides meet our rigorous standards for quality and safety.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=256&ixlib=rb-4.0.3"
+      initials: "SJ"
     },
   ];
+
+  // Using the uploaded image as the source for all avatars
+  const avatarImageUrl = "/lovable-uploads/3c6c8e13-02f0-4bc7-9c3e-33dacfe0f674.png";
 
   return (
     <section id="about" className="section-padding bg-gray-50">
@@ -37,19 +38,15 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((member, index) => (
             <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
+              <CardContent className="p-6 flex flex-col items-center text-center">
+                <div className="mb-4">
+                  <Avatar className="h-24 w-24 border-2 border-coral">
+                    <AvatarImage src={avatarImageUrl} alt={member.name} className="object-cover" />
+                    <AvatarFallback>{member.initials}</AvatarFallback>
+                  </Avatar>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-coral mb-3">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
-                </div>
+                <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                <p className="text-coral">{member.role}</p>
               </CardContent>
             </Card>
           ))}
