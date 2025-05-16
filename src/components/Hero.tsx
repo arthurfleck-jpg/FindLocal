@@ -1,7 +1,5 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
-
 const Hero = () => {
   return <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-28 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Background pattern */}
@@ -44,34 +42,9 @@ const Hero = () => {
               </div>
               
               {/* Floating elements */}
-              <div className="absolute -left-4 top-1/4 transform -translate-y-1/2 bg-white p-3 rounded-lg shadow-lg animate-fade-in hidden md:block">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-coral flex items-center justify-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path>
-                    </svg>
-                  </div>
-                  <div className="ml-3">
-                    <p className="font-medium text-sm">24/7 Support</p>
-                    <p className="text-xs text-gray-500">Always available</p>
-                  </div>
-                </div>
-              </div>
               
-              <div className="absolute -right-4 bottom-1/4 bg-white p-3 rounded-lg shadow-lg animate-fade-in hidden md:block">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-teal flex items-center justify-center text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="m9 12 2 2 4-4"></path>
-                    </svg>
-                  </div>
-                  <div className="ml-3">
-                    <p className="font-medium text-sm">Verified Guides</p>
-                    <p className="text-xs text-gray-500">100% background-checked</p>
-                  </div>
-                </div>
-              </div>
+              
+              
             </div>
           </div>
         </div>
