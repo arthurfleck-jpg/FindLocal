@@ -31,7 +31,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button className="btn-primary">Join Waitlist</Button>
+          
         </div>
 
         {/* Mobile Menu Button */}
