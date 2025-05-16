@@ -22,8 +22,8 @@ const Team = () => {
     },
   ];
 
-  // Using the uploaded image as the source for all avatars
-  const avatarImageUrl = "/lovable-uploads/3c6c8e13-02f0-4bc7-9c3e-33dacfe0f674.png";
+  // Using the newly uploaded image as the source for all avatars
+  const avatarImageUrl = "/lovable-uploads/eb808fc8-5cbb-435a-8e3d-42e2c96b13ba.png";
 
   return (
     <section id="about" className="section-padding bg-gray-50">
@@ -55,7 +55,7 @@ const Team = () => {
         <div className="mt-20 text-center max-w-2xl mx-auto">
           <h3 className="heading-sm mb-4">Our Story</h3>
           <p className="text-gray-700 mb-4">
-            Trusted Local was born from our own struggles as first-time visitors to China. Despite the country's incredible beauty, rich culture, and technological advancement, we found ourselves constantly hitting roadblocks due to language barriers and unfamiliar systems.
+            FindLocal was born from our own struggles as first-time visitors to China. Despite the country's incredible beauty, rich culture, and technological advancement, we found ourselves constantly hitting roadblocks due to language barriers and unfamiliar systems.
           </p>
           <p className="text-gray-700">
             We created this platform to ensure other travelers can experience the real China without the frustrations we faced. By connecting visitors with trustworthy local guides, we're building bridges across cultures and making memorable experiences possible.

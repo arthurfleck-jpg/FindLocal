@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center space-x-2">
-          <span className="text-xl md:text-2xl font-bold text-coral">Trusted<span className="text-black">Local</span></span>
+          <span className="text-xl md:text-2xl font-bold text-coral">Find<span className="text-black">Local</span></span>
         </a>
 
         {/* Desktop Navigation - Hidden on mobile */}
@@ -62,7 +62,7 @@ const Navbar = () => {
       <div className={`fixed inset-y-0 right-0 transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} w-64 bg-white shadow-xl z-50 transition-transform duration-300 ease-in-out md:hidden`}>
         <div className="p-6 flex flex-col h-full">
           <div className="flex justify-between items-center mb-8">
-            <span className="text-xl font-bold text-coral">TrustedLocal</span>
+            <span className="text-xl font-bold text-coral">FindLocal</span>
             <button onClick={toggleMobileMenu} className="text-gray-500">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>

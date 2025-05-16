@@ -17,7 +17,7 @@ const WaitlistCTA = () => {
       setLoading(false);
       toast({
         title: "You've joined the waitlist!",
-        description: "We'll notify you when Trusted Local launches.",
+        description: "We'll notify you when FindLocal launches.",
       });
       setEmail('');
     }, 1000);

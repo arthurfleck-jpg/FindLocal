@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company info */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Trusted<span className="text-coral">Local</span></h3>
+            <h3 className="text-xl font-bold mb-6">Find<span className="text-coral">Local</span></h3>
             <p className="text-gray-400 mb-6">
               Your personal guide to China's hidden treasures. Breaking language barriers and opening doors to authentic experiences.
             </p>
@@ -76,14 +76,14 @@ const Footer = () => {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span>hello@trustedlocal.com</span>
+                <span>hello@findlocal.com</span>
               </li>
             </ul>
           </div>
         </div>
         
         <div className="pt-8 border-t border-gray-800 text-center md:flex md:justify-between md:items-center">
-          <p className="text-gray-500 mb-4 md:mb-0">© 2025 Trusted Local. All rights reserved.</p>
+          <p className="text-gray-500 mb-4 md:mb-0">© 2025 FindLocal. All rights reserved.</p>
           <div className="flex justify-center md:justify-end space-x-4">
             <a href="#" className="text-gray-500 hover:text-coral transition-colors">English</a>
             <span className="text-gray-600">|</span>
