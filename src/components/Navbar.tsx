@@ -1,26 +1,19 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
-  return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+  return <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center space-x-2">
@@ -32,7 +25,7 @@ const Navbar = () => {
           <a href="#home" className="font-medium hover:text-coral transition-colors">Home</a>
           <a href="#features" className="font-medium hover:text-coral transition-colors">Features</a>
           <a href="#why-choose-us" className="font-medium hover:text-coral transition-colors">Why Choose Us</a>
-          <a href="#about" className="font-medium hover:text-coral transition-colors">About Us</a>
+          
           <a href="#contact" className="font-medium hover:text-coral transition-colors">Contact</a>
         </div>
 
@@ -43,18 +36,14 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button onClick={toggleMobileMenu} className="md:hidden text-coral">
-          {isMobileMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          {isMobileMenuOpen ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            </svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          )}
+            </svg>}
         </button>
       </div>
 
@@ -84,14 +73,7 @@ const Navbar = () => {
       </div>
       
       {/* Overlay for mobile menu */}
-      {isMobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
-          onClick={toggleMobileMenu}
-        />
-      )}
-    </nav>
-  );
+      {isMobileMenuOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={toggleMobileMenu} />}
+    </nav>;
 };
-
 export default Navbar;
