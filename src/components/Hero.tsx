@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
-
 const Hero = () => {
-  return (
-    <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-28 lg:pt-40 lg:pb-32 relative overflow-hidden">
+  return <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-28 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-orange-50 to-white z-0"></div>
       
@@ -41,11 +38,7 @@ const Hero = () => {
             <div className="relative">
               {/* Main image */}
               <div className="mx-auto lg:ml-auto lg:mr-0 max-w-md rounded-xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1520986606214-8b456906c813?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3"
-                  alt="Tourist with local guide in China" 
-                  className="w-full h-auto"
-                />
+                <img alt="Tourist with local guide in China" className="w-full h-auto" src="/lovable-uploads/169965e6-245f-4fb0-8e90-d00f6bb503ac.jpg" />
               </div>
               
               {/* Floating elements */}
@@ -81,8 +74,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
