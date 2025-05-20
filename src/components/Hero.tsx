@@ -64,7 +64,7 @@ const Hero = () => {
                 
                 {/* Volume buttons */}
                 
-                <div className="absolute left-[-2px] top-[120px] w-[3px] h-[50px] bg-gray-700 rounded-r-md"></div>
+                
               </div>
               
               {/* Second iPhone - layered behind */}
