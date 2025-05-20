@@ -1,5 +1,8 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 const Hero = () => {
   return <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-28 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Background pattern */}
@@ -33,22 +36,35 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Right content - image/device mockup */}
+          {/* Right content - app screenshots */}
           <div className="w-full lg:w-1/2">
-            <div className="relative">
-              {/* Main image */}
-              <div className="mx-auto lg:ml-auto lg:mr-0 max-w-md rounded-xl overflow-hidden shadow-2xl">
-                <img alt="Tourist with local guide in China" className="w-full h-auto" src="/lovable-uploads/169965e6-245f-4fb0-8e90-d00f6bb503ac.jpg" />
+            <div className="flex flex-col md:flex-row gap-4 justify-center">
+              {/* First image - homepage screenshot */}
+              <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <AspectRatio ratio={9/19.5} className="bg-white">
+                  <img 
+                    src="/lovable-uploads/a7bd4cb8-1e34-44f8-9133-17b1d5adf1d2.png" 
+                    alt="FindLocal app home screen" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
               </div>
               
-              {/* Floating elements */}
-              
-              
-              
+              {/* Second image - detail page screenshot */}
+              <div className="w-full md:w-1/2 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 mt-4 md:mt-12">
+                <AspectRatio ratio={9/19.5} className="bg-white">
+                  <img 
+                    src="/lovable-uploads/3bdc5530-16f6-4872-af23-ae85f99b4034.png" 
+                    alt="FindLocal guide profile screen" 
+                    className="w-full h-full object-cover"
+                  />
+                </AspectRatio>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>;
 };
+
 export default Hero;
