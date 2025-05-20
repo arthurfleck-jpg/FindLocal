@@ -117,22 +117,16 @@ const PhoneMockup = ({
           <div className="absolute inset-[3px] rounded-[36px] overflow-hidden bg-white">
             {/* Status bar */}
             <div className="absolute top-0 left-0 right-0 h-[40px] bg-transparent z-10 flex justify-between items-center px-6">
-              <div className="text-xs font-semibold">9:41</div>
+              
               <div className="flex items-center space-x-1">
                 <div className="w-4 h-4">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 15V9H8V15H6Z" fill="currentColor" />
-                    <path d="M10 17V7H12V17H10Z" fill="currentColor" />
-                    <path d="M14 21V3H16V21H14Z" fill="currentColor" />
-                  </svg>
+                  
                 </div>
                 <div className="w-4 h-4">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 8C14.2091 8 16 6.20914 16 4H20V6C20 9.31371 17.3137 12 14 12H10C6.68629 12 4 14.6863 4 18V20H8C8 17.7909 9.79086 16 12 16Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  
                 </div>
                 <div className="w-7 h-3.5 border border-black rounded-sm relative">
-                  <div className="absolute top-0.5 bottom-0.5 left-0.5 right-1 bg-black rounded-sm"></div>
+                  
                 </div>
               </div>
             </div>
