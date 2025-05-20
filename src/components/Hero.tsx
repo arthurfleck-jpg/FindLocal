@@ -125,9 +125,7 @@ const PhoneMockup = ({
                 <div className="w-4 h-4">
                   
                 </div>
-                <div className="w-7 h-3.5 border border-black rounded-sm relative">
-                  
-                </div>
+                
               </div>
             </div>
             
