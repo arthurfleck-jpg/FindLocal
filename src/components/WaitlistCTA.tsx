@@ -25,7 +25,7 @@ const WaitlistCTA = () => {
           <div className="flex flex-col md:flex-row items-center">
             {/* Left side - image */}
             <div className="w-full md:w-1/2 h-64 md:h-auto">
-              <img src="https://images.unsplash.com/photo-1583116527329-7ea3bc587a19?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3" alt="Tourist in China" className="w-full h-full object-cover" />
+              <img alt="Tourist in China" className="w-full h-full object-cover" src="/lovable-uploads/0b480149-bb57-41c2-a891-9ec39a213105.png" />
             </div>
             
             {/* Right side - content */}
