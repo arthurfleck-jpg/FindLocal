@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
 const Hero = () => {
   return <section id="home" className="pt-28 pb-20 md:pt-32 md:pb-28 lg:pt-40 lg:pb-32 relative overflow-hidden">
       {/* Background pattern */}
@@ -35,10 +33,10 @@ const Hero = () => {
             {/* App Store Buttons */}
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
               <a href="#" className="transition hover:opacity-90">
-                <img src="/lovable-uploads/a7bd4cb8-1e34-44f8-9133-17b1d5adf1d2.png" alt="App Store" className="h-12" />
+                
               </a>
               <a href="#" className="transition hover:opacity-90">
-                <img src="/lovable-uploads/c3ee9f8d-ed66-4756-8b3b-9d566adc4696.png" alt="Google Play" className="h-12" />
+                
               </a>
             </div>
             
@@ -62,44 +60,28 @@ const Hero = () => {
                   {/* iPhone Mockup 1 */}
                   <CarouselItem className="pl-4 md:basis-1/1 lg:basis-3/4">
                     <PhoneMockup>
-                      <img 
-                        src="/lovable-uploads/1909dda8-2d72-4735-b6a1-15f1caf66cff.png" 
-                        alt="FindLocal App Home Screen" 
-                        className="w-full h-full object-cover rounded-[32px]" 
-                      />
+                      <img src="/lovable-uploads/1909dda8-2d72-4735-b6a1-15f1caf66cff.png" alt="FindLocal App Home Screen" className="w-full h-full object-cover rounded-[32px]" />
                     </PhoneMockup>
                   </CarouselItem>
                   
                   {/* iPhone Mockup 2 */}
                   <CarouselItem className="pl-4 md:basis-1/1 lg:basis-3/4">
                     <PhoneMockup>
-                      <img 
-                        src="/lovable-uploads/af32652a-5b63-4a6c-ac49-8f4a65288ef6.png" 
-                        alt="FindLocal Guide Onboarding" 
-                        className="w-full h-full object-cover rounded-[32px]" 
-                      />
+                      <img src="/lovable-uploads/af32652a-5b63-4a6c-ac49-8f4a65288ef6.png" alt="FindLocal Guide Onboarding" className="w-full h-full object-cover rounded-[32px]" />
                     </PhoneMockup>
                   </CarouselItem>
                   
                   {/* iPhone Mockup 3 */}
                   <CarouselItem className="pl-4 md:basis-1/1 lg:basis-3/4">
                     <PhoneMockup>
-                      <img 
-                        src="/lovable-uploads/444596fb-ef41-460d-a9a7-f5f3f0024bc8.png" 
-                        alt="FindLocal Messaging" 
-                        className="w-full h-full object-cover rounded-[32px]" 
-                      />
+                      <img src="/lovable-uploads/444596fb-ef41-460d-a9a7-f5f3f0024bc8.png" alt="FindLocal Messaging" className="w-full h-full object-cover rounded-[32px]" />
                     </PhoneMockup>
                   </CarouselItem>
                   
                   {/* iPhone Mockup 4 */}
                   <CarouselItem className="pl-4 md:basis-1/1 lg:basis-3/4">
                     <PhoneMockup>
-                      <img 
-                        src="/lovable-uploads/3893e779-bacb-4233-a9d2-0d86319c35b7.png" 
-                        alt="FindLocal Profile Screen" 
-                        className="w-full h-full object-cover rounded-[32px]" 
-                      />
+                      <img src="/lovable-uploads/3893e779-bacb-4233-a9d2-0d86319c35b7.png" alt="FindLocal Profile Screen" className="w-full h-full object-cover rounded-[32px]" />
                     </PhoneMockup>
                   </CarouselItem>
                 </CarouselContent>
@@ -118,9 +100,12 @@ const Hero = () => {
 };
 
 // Reusable iPhone mockup component
-const PhoneMockup = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="relative w-full max-w-[300px] mx-auto transform transition-transform duration-500 hover:scale-[1.02]">
+const PhoneMockup = ({
+  children
+}: {
+  children: React.ReactNode;
+}) => {
+  return <div className="relative w-full max-w-[300px] mx-auto transform transition-transform duration-500 hover:scale-[1.02]">
       {/* iPhone frame */}
       <div className="relative w-full pb-[210%]">
         {/* Black iPhone frame */}
@@ -162,8 +147,6 @@ const PhoneMockup = ({ children }: { children: React.ReactNode }) => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
