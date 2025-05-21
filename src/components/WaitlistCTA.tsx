@@ -11,19 +11,34 @@ const WaitlistCTA = () => {
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!email || !email.includes('@')) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
     setLoading(true);
 
     try {
+      console.log('Submitting email to waitlist:', email);
+      
       // Insert email into the waitlist table
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from('Waitlist')
-        .insert([{ email }]);
+        .insert([{ email }])
+        .select();
+      
+      console.log('Supabase response:', { data, error });
       
       if (error) {
         console.error('Error saving to waitlist:', error);
         toast({
           title: "Couldn't join waitlist",
-          description: error.message === "duplicate key value violates unique constraint \"Waitlist_email_key\"" 
+          description: error.message.includes("duplicate key") 
             ? "This email is already on our waitlist." 
             : "There was a problem joining the waitlist. Please try again.",
           variant: "destructive"
@@ -64,8 +79,19 @@ const WaitlistCTA = () => {
               </p>
               
               <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3">
-                <Input type="email" placeholder="Enter your email address" className="flex-grow px-4 py-3 rounded-md border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:border-white focus:ring-white" value={email} onChange={e => setEmail(e.target.value)} required />
-                <Button className="bg-black hover:bg-black/80 text-white font-semibold py-3 px-6 rounded-md transition duration-200" disabled={loading} type="submit">
+                <Input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className="flex-grow px-4 py-3 rounded-md border-white/20 bg-white/10 text-white placeholder:text-white/60 focus:border-white focus:ring-white" 
+                  value={email} 
+                  onChange={e => setEmail(e.target.value)} 
+                  required 
+                />
+                <Button 
+                  className="bg-black hover:bg-black/80 text-white font-semibold py-3 px-6 rounded-md transition duration-200" 
+                  disabled={loading} 
+                  type="submit"
+                >
                   {loading ? "Joining..." : "Join Waitlist"}
                 </Button>
               </form>
@@ -87,4 +113,5 @@ const WaitlistCTA = () => {
       </div>
     </section>;
 };
+
 export default WaitlistCTA;
