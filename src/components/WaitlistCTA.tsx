@@ -1,24 +1,52 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+
 const WaitlistCTA = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => {
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      // Insert email into the waitlist table
+      const { error } = await supabase
+        .from('Waitlist')
+        .insert([{ email }]);
+      
+      if (error) {
+        console.error('Error saving to waitlist:', error);
+        toast({
+          title: "Couldn't join waitlist",
+          description: error.message === "duplicate key value violates unique constraint \"Waitlist_email_key\"" 
+            ? "This email is already on our waitlist." 
+            : "There was a problem joining the waitlist. Please try again.",
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "You've joined the waitlist!",
+          description: "We'll notify you when FindLocal launches."
+        });
+        setEmail('');
+      }
+    } catch (error) {
+      console.error('Error in submission:', error);
       toast({
-        title: "You've joined the waitlist!",
-        description: "We'll notify you when FindLocal launches."
+        title: "Something went wrong",
+        description: "There was an error submitting your email. Please try again.",
+        variant: "destructive"
       });
-      setEmail('');
-    }, 1000);
+    } finally {
+      setLoading(false);
+    }
   };
+  
   return <section id="cta" className="py-20 md:py-28">
       <div className="container mx-auto container-padding">
         <div className="bg-coral rounded-3xl overflow-hidden">
@@ -50,7 +78,6 @@ const WaitlistCTA = () => {
               </div>
               
               <div className="mt-8 flex items-center gap-2">
-                
                 <div className="h-1 w-1 rounded-full bg-white/50"></div>
                 <div className="text-sm font-medium">Limited spots available</div>
               </div>
