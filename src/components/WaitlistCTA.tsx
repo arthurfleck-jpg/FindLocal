@@ -37,13 +37,12 @@ const WaitlistCTA = () => {
       const { data: connectionTest, error: connectionError } = await supabase.from('waitlist').select('count').limit(1);
       console.log('Supabase connection test:', { connectionTest, connectionError });
       
-      // Insert email into the waitlist table (ensure table name is lowercase)
+      // Insert email into the waitlist table
       const { data, error } = await supabase
         .from('waitlist')
-        .insert([{ email, source: 'landing_page' }])
-        .select();
+        .insert([{ email, source: 'landing_page' }]);
       
-      console.log('Supabase response:', { data, error });
+      console.log('Supabase insert response:', { data, error });
       
       if (error) {
         console.error('Error saving to waitlist:', error);
