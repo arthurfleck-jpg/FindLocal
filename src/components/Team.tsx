@@ -1,26 +1,7 @@
 
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Team = () => {
-  const team = [{
-    name: "Jennifer Wong",
-    role: "Founder & CEO",
-    initials: "JW"
-  }, {
-    name: "Michael Chen",
-    role: "Co-Founder & CPO",
-    initials: "MC"
-  }, {
-    name: "Sarah Johnson",
-    role: "Head of Guide Relations",
-    initials: "SJ"
-  }];
-
-  // Using the uploaded image as the source for all avatars
-  const avatarImageUrl = "/lovable-uploads/eb808fc8-5cbb-435a-8e3d-42e2c96b13ba.png";
-  
   return (
     <section id="team" className="py-20 bg-orange-50">
       <div className="container mx-auto px-4">
@@ -31,25 +12,34 @@ const Team = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {team.map((member, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6">
-                <div className="flex justify-center mb-4">
-                  <Avatar className="w-24 h-24">
-                    {avatarImageUrl ? (
-                      <AvatarImage src={avatarImageUrl} alt={member.name} />
-                    ) : null}
-                    <AvatarFallback className="text-lg bg-orange-100 text-orange-800">
-                      {member.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                </div>
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-gray-600">{member.role}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 max-w-5xl mx-auto items-center">
+          {/* Left side: Imperial College London Business School logo */}
+          <div className="w-full md:w-2/5 flex justify-center">
+            <div className="rounded-lg shadow-md overflow-hidden max-w-xs">
+              <img 
+                src="/lovable-uploads/21ec11ca-28ac-4387-a7f8-bca6f67f5d57.png" 
+                alt="Imperial College London Business School" 
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+          
+          {/* Right side: Team description */}
+          <div className="w-full md:w-3/5">
+            <h3 className="text-2xl font-semibold mb-4 text-gray-800">About Our Team</h3>
+            <div className="space-y-4 text-gray-700">
+              <p>
+                We are a team of ambitious students from Imperial College London Business School, 
+                one of the world's leading business schools. Our diverse backgrounds in finance, 
+                technology, and entrepreneurship drive us to create innovative solutions that 
+                bridge the gap between academic excellence and real-world impact.
+              </p>
+              <p>
+                With our strong foundation in business strategy and cutting-edge research, 
+                we're committed to delivering exceptional value through our platform.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
