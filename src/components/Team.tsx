@@ -6,10 +6,9 @@ const Team = () => {
     <section id="team" className="py-20 bg-orange-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
             Our passionate team is dedicated to connecting travelers with trusted local guides across China.
-          </p>
+          </h2>
         </div>
         
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 max-w-5xl mx-auto items-center">
@@ -26,8 +25,8 @@ const Team = () => {
           
           {/* Right side: Team description */}
           <div className="w-full md:w-3/5">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800">About Our Team</h3>
-            <div className="space-y-4 text-gray-700">
+            <h3 className="text-2xl font-semibold mb-4 text-black">About Our Team</h3>
+            <div className="space-y-4 text-black">
               <p>
                 We are a team of ambitious students from Imperial College London Business School, 
                 one of the world's leading business schools. Our diverse backgrounds in finance, 
