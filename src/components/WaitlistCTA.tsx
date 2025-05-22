@@ -33,23 +33,38 @@ const WaitlistCTA = () => {
     try {
       console.log('Submitting email to waitlist:', email);
       
-      // Insert email into the waitlist table (note lowercase table name)
+      // Test supabase connection and log details
+      const { data: connectionTest, error: connectionError } = await supabase.from('waitlist').select('count').limit(1);
+      console.log('Supabase connection test:', { connectionTest, connectionError });
+      
+      // Insert email into the waitlist table (ensure table name is lowercase)
       const { data, error } = await supabase
         .from('waitlist')
-        .insert([{ email }])
+        .insert([{ email, source: 'landing_page' }])
         .select();
       
       console.log('Supabase response:', { data, error });
       
       if (error) {
         console.error('Error saving to waitlist:', error);
-        toast({
-          title: "Couldn't join waitlist",
-          description: error.message.includes("duplicate key") 
-            ? "This email is already on our waitlist." 
-            : "There was a problem joining the waitlist. Please try again.",
-          variant: "destructive"
-        });
+        
+        // Handle specific error cases
+        if (error.code === '23505' || error.message.includes("duplicate key")) {
+          toast({
+            title: "Already on the waitlist",
+            description: "This email is already on our waitlist.",
+            variant: "destructive"
+          });
+        } else {
+          // Log detailed error information for debugging
+          console.error('Detailed error:', JSON.stringify(error));
+          
+          toast({
+            title: "Couldn't join waitlist",
+            description: "There was a problem joining the waitlist. Please try again.",
+            variant: "destructive"
+          });
+        }
       } else {
         toast({
           title: "You've joined the waitlist!",
@@ -59,7 +74,8 @@ const WaitlistCTA = () => {
         setEmail('');
       }
     } catch (error) {
-      console.error('Error in submission:', error);
+      // Log any unhandled errors
+      console.error('Unhandled error in submission:', error);
       toast({
         title: "Something went wrong",
         description: "There was an error submitting your email. Please try again.",
