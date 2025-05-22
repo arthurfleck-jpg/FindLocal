@@ -18,7 +18,7 @@ export const supabase = createClient<Database>(
       autoRefreshToken: true, // Enable token auto-refresh
     },
     global: {
-      fetch: (...args) => fetch(...args), // Ensure fetch is available
+      fetch: (url: RequestInfo | URL, init?: RequestInit) => fetch(url, init), // Properly typed fetch function
     },
   }
 );
