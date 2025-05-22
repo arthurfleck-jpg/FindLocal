@@ -9,21 +9,24 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      Waitlist: {
+      waitlist: {
         Row: {
-          created_at: string
+          created_at: string | null
           email: string
-          id: number
+          id: string
+          source: string | null
         }
         Insert: {
-          created_at?: string
+          created_at?: string | null
           email: string
-          id?: number
+          id?: string
+          source?: string | null
         }
         Update: {
-          created_at?: string
+          created_at?: string | null
           email?: string
-          id?: number
+          id?: string
+          source?: string | null
         }
         Relationships: []
       }

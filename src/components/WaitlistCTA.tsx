@@ -9,10 +9,17 @@ const WaitlistCTA = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   
+  // Email validation function
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email || !email.includes('@')) {
+    // Validate email before submission
+    if (!email || !isValidEmail(email)) {
       toast({
         title: "Invalid email",
         description: "Please enter a valid email address.",
@@ -26,9 +33,9 @@ const WaitlistCTA = () => {
     try {
       console.log('Submitting email to waitlist:', email);
       
-      // Insert email into the waitlist table
+      // Insert email into the waitlist table (note lowercase table name)
       const { data, error } = await supabase
-        .from('Waitlist')
+        .from('waitlist')
         .insert([{ email }])
         .select();
       
@@ -48,6 +55,7 @@ const WaitlistCTA = () => {
           title: "You've joined the waitlist!",
           description: "We'll notify you when FindLocal launches."
         });
+        // Reset form after successful submission
         setEmail('');
       }
     } catch (error) {
@@ -86,11 +94,13 @@ const WaitlistCTA = () => {
                   value={email} 
                   onChange={e => setEmail(e.target.value)} 
                   required 
+                  aria-label="Email address"
                 />
                 <Button 
                   className="bg-black hover:bg-black/80 text-white font-semibold py-3 px-6 rounded-md transition duration-200" 
                   disabled={loading} 
                   type="submit"
+                  aria-label="Join waitlist"
                 >
                   {loading ? "Joining..." : "Join Waitlist"}
                 </Button>
